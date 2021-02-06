@@ -157,14 +157,16 @@ case $ARCH in
     "x86_64")
         MACHINE=${MACHINE:=qemux86-64}
         HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
-    ;;
+        ;;
     "arm" |"armv6l")
-        if [ -z $MACHINE ];
+        if [ -z $MACHINE ]; then
+            error "Please set machine for $ARCH"
         fi
         HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
-    ;;
-    "armv7l")
-        if [ -z $MACHINE ];
+   ;;
+   "arm" |"armv7l")
+        if [ -z $MACHINE ]; then
+            error "Please set machine for $ARCH"
         fi
         HASSIO_DOCKER="$DOCKER_REPO/armv7-hassio-supervisor"
     ;;
