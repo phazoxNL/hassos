@@ -159,16 +159,14 @@ case $ARCH in
         HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
     ;;
     "arm" |"armv6l")
-        if [ -z $MACHINE ]; then
-            error "Please set machine for $ARCH"
+        if [ -z $MACHINE ];
         fi
         HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
     ;;
-    "armv61")
-        if [ -z $MACHINE ]; then
-            error "Please set machine for $ARCH"
+    "armv7l")
+        if [ -z $MACHINE ];
         fi
-        HASSIO_DOCKER="$DOCKER_REPO/armvhf-hassio-supervisor"
+        HASSIO_DOCKER="$DOCKER_REPO/armv7-hassio-supervisor"
     ;;
     "aarch64")
         if [ -z $MACHINE ]; then
